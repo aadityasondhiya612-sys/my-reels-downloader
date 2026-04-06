@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Reels Downloader</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding-top: 50px; background: #f4f4f4; }
+        input { padding: 12px; width: 80%; max-width: 400px; border-radius: 5px; border: 1px solid #ccc; }
+        button { padding: 12px 20px; background: #e1306c; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Instagram Reels Downloader</h1>
+    <form action="/download" method="post">
+        <input type="text" name="url" placeholder="Paste Reel Link Here..." required>
+        <br>
+        <button type="submit">Video Ka Link Nikalein</button>
+    </form>
+
+    {% if download_link %}
+    <div style="margin-top: 30px;">
+        <h3>Aapki Video Taiyar Hai!</h3>
+        <a href="{{ download_link }}" target="_blank">
+            <button style="background: green;">Abhi Download Karein</button>
+        </a>
+    </div>
+    {% endif %}
+</body>
+</html>
