@@ -2,7 +2,9 @@ from flask import Flask, render_template, request
 import yt_dlp
 
 app = Flask(__name__)
-
+@app.route('/ads.txt')
+def ads():
+    return open('ads.txt').read(), 200, {'Content-Type': 'text/plain'}
 @app.route('/')
 def index():
     return render_template('index.html')
